@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare Hospital</title>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { line-height:1.6; background:#f9fbfd; }
+
+    header {
+      background:#0077b6; color:white; padding:15px;
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+    }
+
+    header h1 { font-size:22px; }
+
+    nav ul { list-style:none; display:flex; gap:15px; }
+    nav ul li a { color:white; text-decoration:none; font-size:15px; }
+
+    .menu-toggle { display:none; font-size:22px; cursor:pointer; }
+
+    section { display:none; padding:20px; }
+    section.active { display:block; }
+
+    .hero {
+      background:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3') center/cover;
+      color:white; text-align:center; padding:80px 20px;
+    }
+
+    .container { padding:20px; }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .card {
+      background:white; padding:20px; border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      text-align:center;
+    }
+
+    .card h3 { margin-bottom:10px; }
+
+    .btn {
+      display:inline-block; margin-top:10px; padding:10px 15px;
+      background:#0077b6; color:white; border-radius:5px;
+      text-decoration:none; cursor:pointer;
+    }
+
+    input, textarea {
+      width:100%; padding:10px; margin-top:10px;
+      border-radius:5px; border:1px solid #ccc;
+    }
+
+    footer {
+      background:#03045e; color:white; text-align:center; padding:15px;
+    }
+
+    @media(max-width:768px) {
+      nav ul {
+        display:none; flex-direction:column; width:100%; background:#0077b6; margin-top:10px;
+      }
+      nav ul.active { display:flex; }
+      .menu-toggle { display:block; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CityCare Hospital</h1>
+  <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+  <nav>
+    <ul id="menu">
+      <li><a onclick="showPage('home')">Home</a></li>
+      <li><a onclick="showPage('services')">Services</a></li>
+      <li><a onclick="showPage('doctors')">Doctors</a></li>
+      <li><a onclick="showPage('appointment')">Appointment</a></li>
+      <li><a onclick="showPage('about')">About</a></li>
+      <li><a onclick="showPage('contact')">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="hero">
+    <h2>Your Health, Our Priority</h2>
+    <p>Advanced Care | Trusted Doctors | 24/7 Emergency</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Emergency Care</h3><p>24/7 emergency services.</p></div>
+    <div class="card"><h3>Cardiology</h3><p>Heart specialists & surgeries.</p></div>
+    <div class="card"><h3>Neurology</h3><p>Brain & nervous system care.</p></div>
+    <div class="card"><h3>Orthopedics</h3><p>Bone & joint treatments.</p></div>
+    <div class="card"><h3>Pediatrics</h3><p>Child healthcare experts.</p></div>
+    <div class="card"><h3>Diagnostics</h3><p>Lab tests & imaging.</p></div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors">
+  <h2>Our Doctors</h2>
+  <div class="grid">
+    <div class="card"><h3>Dr. Sharma</h3><p>Cardiologist</p></div>
+    <div class="card"><h3>Dr. Reddy</h3><p>Neurologist</p></div>
+    <div class="card"><h3>Dr. Patel</h3><p>Orthopedic</p></div>
+    <div class="card"><h3>Dr. Khan</h3><p>Pediatrician</p></div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <h2>Book Appointment</h2>
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="date" id="date">
+  <textarea id="message" placeholder="Describe your problem"></textarea>
+  <button class="btn" onclick="bookAppointment()">Submit</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>CityCare Hospital is a multi-specialty hospital providing world-class healthcare with modern technology and experienced doctors.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Phone: +91 9876543210</p>
+  <p>Email: citycare@email.com</p>
+  <p>Address: Main Road, Your City</p>
+</section>
+
+<footer>
+  <p>© 2026 CityCare Hospital</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+
+  function showPage(pageId) {
+    let sections = document.querySelectorAll('section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  function bookAppointment() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let date = document.getElementById('date').value;
+
+    if(name && email && date) {
+      alert('Appointment Booked Successfully!');
+    } else {
+      alert('Please fill all fields');
+    }
+  }
+</script>
+
+</body>
+</html>
