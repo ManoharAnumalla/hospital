@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siri Hospitals | Excellence in Healthcare in Hyderabad</title>
+    <meta name="description" content="Siri Hospitals in Dammaiguda, Hyderabad provides 24/7 top-tier medical care including General Medicine, Laboratory Investigations, Laparoscopic Surgery, and Ambulance services.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Elements for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6', // Teal principal
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        secondary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6', // Bright Blue
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'floating': '0 20px 40px -10px rgba(20, 184, 166, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth transitions */
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Top Bar -->
+    <div class="bg-secondary-900 text-white text-sm py-2 px-4 shadow-sm z-50 relative">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-brand-400"></i>
+                    <span>Dammaiguda, Hyderabad</span>
+                </div>
+                <div class="hidden md:flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-brand-400"></i>
+                    <span>24/7 Working Hours</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/919876543210" class="hover:text-brand-300 transition-colors flex items-center gap-2 font-medium">
+                    <i class="fa-brands fa-whatsapp text-green-400 text-lg"></i> +91 9876543210
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-400 to-secondary-500 rounded-xl flex items-center justify-center text-white shadow-floating">
+                        <i class="fa-solid fa-heart-pulse text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-2xl text-secondary-900 leading-tight tracking-tight">Siri Hospitals</h1>
+                        <p class="text-[10px] uppercase font-semibold text-brand-600 tracking-wider">Multispeciality Care</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-secondary-900 hover:text-brand-600 font-medium transition-colors border-b-2 border-transparent hover:border-brand-500 py-1">Home</a>
+                    <a href="#about" class="text-gray-500 hover:text-brand-600 font-medium transition-colors border-b-2 border-transparent hover:border-brand-500 py-1">About Us</a>
+                    <a href="#services" class="text-gray-500 hover:text-brand-600 font-medium transition-colors border-b-2 border-transparent hover:border-brand-500 py-1">Services</a>
+                    <a href="#contact" class="text-gray-500 hover:text-brand-600 font-medium transition-colors border-b-2 border-transparent hover:border-brand-500 py-1">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex">
+                    <a href="tel:9876543210" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-floating flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-phone-volume"></i> Emergency Call
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-500 hover:text-secondary-900 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-white pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Decorative blobs -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-50 opacity-50 blur-3xl"></div>
+            <div class="absolute top-1/2 -left-24 w-72 h-72 rounded-full bg-secondary-50 opacity-50 blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 font-semibold text-sm mb-6 border border-brand-100">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        Open 24/7 for Emergencies
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
+                        Excellence in Healthcare, <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-secondary-500">Compassionate Service.</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Experience world-class medical facilities and dedicated healthcare professionals right in the heart of Dammaiguda, Hyderabad. Your health is our top priority.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#services" class="bg-secondary-900 hover:bg-secondary-800 text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl text-center">
+                            Our Services
+                        </a>
+                        <a href="tel:9876543210" class="bg-white border-2 border-brand-100 hover:border-brand-500 text-brand-700 px-8 py-3.5 rounded-full font-semibold transition-all shadow-sm hover:shadow-md text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> 9876543210
+                        </a>
+                    </div>
+                    
+                    <div class="mt-10 flex items-center gap-6 text-sm text-gray-500 font-medium">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            Expert Doctors
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+                                <i class="fa-solid fa-flask"></i>
+                            </div>
+                            Advanced Labs
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="relative">
+                    <div class="absolute absolute inset-0 bg-gradient-to-tr from-brand-400/20 to-transparent rounded-3xl transform translate-x-4 translate-y-4 -z-10"></div>
+                    <img src="https://images.pexels.com/photos/15277947/pexels-photo-15277947.jpeg" alt="Modern Hospital Interior with Medical Professionals" class="rounded-3xl shadow-2xl w-full h-[500px] object-cover border-4 border-white">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-floating flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                        <div class="w-12 h-12 rounded-full bg-yellow-100 text-yellow-500 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-secondary-900 text-lg">Top Rated</p>
+                            <p class="text-xs text-gray-500">Hospital in Hyderabad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 relative z-10 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h3 class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2">What We Offer</h3>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-secondary-900 mb-4">Our Medical Services</h2>
+                <div class="w-20 h-1.5 bg-brand-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 text-lg">Comprehensive healthcare solutions equipped with state-of-the-art technology and specialized medical teams.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-soft hover-lift border border-gray-50 flex flex-col h-full group">
+                    <div class="w-full h-48 rounded-xl overflow-hidden mb-6 relative">
+                        <div class="absolute inset-0 bg-brand-900/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.pexels.com/photos/30282653/pexels-photo-30282653.jpeg" alt="General Medicine Setup" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-brand-50 w-12 h-12 rounded-lg flex items-center justify-center text-brand-600 text-xl -mt-12 mb-4 relative z-20 shadow-md">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-secondary-900 mb-3 group-hover:text-brand-600 transition-colors">General Medicine</h4>
+                    <p class="text-gray-600 flex-grow text-sm leading-relaxed">
+                        Comprehensive diagnostic and treatment services for a wide range of adult illnesses and health concerns.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-soft hover-lift border border-gray-50 flex flex-col h-full group">
+                    <div class="w-full h-48 rounded-xl overflow-hidden mb-6 relative">
+                        <div class="absolute inset-0 bg-brand-900/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg" alt="Laboratory Investigations" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-brand-50 w-12 h-12 rounded-lg flex items-center justify-center text-brand-600 text-xl -mt-12 mb-4 relative z-20 shadow-md">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-secondary-900 mb-3 group-hover:text-brand-600 transition-colors">All Lab Investigation</h4>
+                    <p class="text-gray-600 flex-grow text-sm leading-relaxed">
+                        Accurate, rapid, and fully automated pathology and diagnostic laboratory services functioning 24/7.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-soft hover-lift border border-gray-50 flex flex-col h-full group">
+                    <div class="w-full h-48 rounded-xl overflow-hidden mb-6 relative">
+                        <div class="absolute inset-0 bg-brand-900/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2000&auto=format&fit=crop" alt="Laparoscopic Surgery Equipment" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-brand-50 w-12 h-12 rounded-lg flex items-center justify-center text-brand-600 text-xl -mt-12 mb-4 relative z-20 shadow-md">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-secondary-900 mb-3 group-hover:text-brand-600 transition-colors">General Laparoscopic Surgery</h4>
+                    <p class="text-gray-600 flex-grow text-sm leading-relaxed">
+                        Minimally invasive surgical procedures ensuring faster recovery times and exceptional patient outcomes.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-soft hover-lift border border-gray-50 flex flex-col h-full group">
+                    <div class="w-full h-48 rounded-xl overflow-hidden mb-6 relative">
+                        <div class="absolute inset-0 bg-brand-900/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop" alt="24/7 Ambulance Service" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-red-50 w-12 h-12 rounded-lg flex items-center justify-center text-red-500 text-xl -mt-12 mb-4 relative z-20 shadow-md">
+                        <i class="fa-solid fa-truck-medical"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-secondary-900 mb-3 group-hover:text-brand-600 transition-colors">Ambulance 24/7</h4>
+                    <p class="text-gray-600 flex-grow text-sm leading-relaxed">
+                        Rapid response emergency fleet equipped with life-saving equipment and trained paramedics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Image Grid -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-bl from-brand-100/50 to-transparent rounded-full blur-3xl -z-10 transform -translate-x-12 -translate-y-12"></div>
+                    <img src="https://images.pexels.com/photos/11782003/pexels-photo-11782003.jpeg" alt="Siri Hospital Modern Facility" class="rounded-3xl shadow-xl w-full h-[550px] object-cover">
+                    <!-- Overlapping Info Box -->
+                    <div class="absolute -bottom-8 -right-8 bg-secondary-900 text-white p-8 rounded-3xl shadow-soft hidden md:block">
+                        <h4 class="text-5xl font-extrabold text-brand-400 mb-2">24/7</h4>
+                        <p class="text-lg font-medium">Dedication to Care</p>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div>
+                    <h3 class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2">About The Hospital</h3>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-secondary-900 mb-6">Trusted Healthcare Leaders in Hyderabad</h2>
+                    
+                    <div class="space-y-4 text-gray-600 text-lg leading-relaxed">
+                        <p>
+                            Welcome to <strong>Siri Hospitals</strong>, where excellence in healthcare meets compassionate service. Nestled in the heart of Dammaiguda, we take immense pride in being one of Hyderabad's premier medical facilities.
+                        </p>
+                        <p>
+                            With a steadfast commitment to delivering top-tier healthcare services, Siri Multi-Speciality Hospital has emerged as a trusted leader in the region. Our team of dedicated healthcare professionals, coupled with state-of-the-art technology, ensures that you receive the highest quality care available. 
+                        </p>
+                        <p>
+                            Discover why we are the preferred choice for all your medical needs in Dammaiguda and throughout Hyderabad.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6 mt-8 border-t border-gray-100 pt-8">
+                        <div>
+                            <div class="text-brand-500 text-3xl mb-2"><i class="fa-solid fa-user-doctor"></i></div>
+                            <h5 class="font-bold text-secondary-900 text-xl mb-1">Expert Team</h5>
+                            <p class="text-sm text-gray-500">Highly qualified specialists.</p>
+                        </div>
+                        <div>
+                            <div class="text-brand-500 text-3xl mb-2"><i class="fa-solid fa-hospital"></i></div>
+                            <h5 class="font-bold text-secondary-900 text-xl mb-1">Modern Tech</h5>
+                            <p class="text-sm text-gray-500">Advanced medical equipment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / CTA Banner -->
+    <section class="py-24 bg-secondary-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500 opacity-20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-500 opacity-20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Your Health is in Safe Hands</h2>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-10">We are dedicated to providing the best healthcare solutions around the clock. Contact us immediately for emergencies or appointments.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:9876543210" class="bg-brand-500 hover:bg-brand-600 text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-floating flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone"></i> Call 9876543210
+                </a>
+                <a href="https://wa.me/919876543210" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-green-400"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t-4 border-brand-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fa-solid fa-heart-pulse text-xl"></i>
+                        </div>
+                        <h2 class="font-bold text-2xl text-white">Siri Hospitals</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Hyderabad's premier medical facility committed to high-quality care, compassionate service, and advanced technology.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-500"></i>Home</a></li>
+                        <li><a href="#about" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-500"></i>About Us</a></li>
+                        <li><a href="#services" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-500"></i>Services</a></li>
+                        <li><a href="#contact" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-500"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-500"></i>General Medicine</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-500"></i>Lab Investigations</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-500"></i>Laparoscopic Surgery</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-500"></i>24/7 Ambulance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Info</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-500 text-lg"></i>
+                            <span>Dammaiguda,<br>Hyderabad, Telangana</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-phone text-brand-500 text-lg"></i>
+                            <span>+91 9876543210</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-brands fa-whatsapp text-brand-500 text-lg"></i>
+                            <span>+91 9876543210</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-clock text-brand-500 text-lg"></i>
+                            <span>Open 24/7 Daily</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2024 Siri Hospitals. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
