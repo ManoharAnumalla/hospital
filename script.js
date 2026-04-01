@@ -1,0 +1,136 @@
+// Initialize Lucide Icons
+lucide.createIcons();
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* --- Sticky Header --- */
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    /* --- Mobile Navigation --- */
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const nav = document.getElementById('nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    mobileToggle.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        const icon = mobileToggle.querySelector('i');
+        // Toggle icon between menu and x
+        if(nav.classList.contains('nav-active')) {
+            icon.setAttribute('data-lucide', 'x');
+        } else {
+            icon.setAttribute('data-lucide', 'menu');
+        }
+        lucide.createIcons();
+    });
+
+    // Close mobile nav when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            mobileToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        });
+    });
+
+    /* --- Scroll Spy / Active Nav Link Update --- */
+    const sections = document.querySelectorAll('section');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    /* --- Scroll Reveal Animations --- */
+    const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+
+    const revealFunction = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100;
+
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealFunction);
+    revealFunction(); // Trigger on load
+
+    /* --- Handle Appointment Form --- */
+    const form = document.getElementById('appointmentForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Here you would normally send the data to a backend via fetch()
+        
+        // Simulating API Call
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i data-lucide="loader" class="spin"></i> Sending...';
+        lucide.createIcons();
+
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            formSuccess.classList.remove('hidden');
+        }, 1500);
+    });
+
+    /* --- Counter Animation --- */
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let counted = false;
+
+    const runCounters = () => {
+        statNumbers.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const duration = 2000; // 2s duration
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.innerText = Math.ceil(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCounter();
+        });
+    };
+
+    const statsSection = document.getElementById('statistics');
+    if (statsSection) {
+        window.addEventListener('scroll', () => {
+            const sectionTop = statsSection.getBoundingClientRect().top;
+            if (!counted && sectionTop < window.innerHeight - 50) {
+                runCounters();
+                counted = true;
+            }
+        });
+    }
+});
