@@ -63,7 +63,56 @@
             box-shadow: 0 20px 40px -10px rgba(0,0,0,0.12);
         }
    
-    
+    /* Spacer for scrolling */
+    .spacer {
+        height: 100vh;
+    }
+
+    /* Stats container */
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* allow wrap on mobile */
+        gap: 20px;
+        padding: 80px 20px;
+    }
+
+    .stat-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px 40px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        min-width: 140px;
+        flex: 1 1 120px; /* responsive width */
+        max-width: 200px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+        font-weight: bold;
+        color: #111;
+        margin-bottom: 10px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: #666;
+    }
+
+    /* Mobile scaling */
+    @media (max-width: 480px) {
+        .stat-number {
+            font-size: 28px;
+        }
+        .stat-label {
+            font-size: 12px;
+        }
+        .stats-container {
+            padding: 50px 10px;
+            gap: 15px;
+        }
+    }
 
    
    
@@ -77,7 +126,7 @@
             <div class="flex items-center gap-4">
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-location-dot text-brand-400"></i>
-                    <span>Dammaiguda, Hyderabad</span>
+                    <span>Rampally, Hyderabad</span>
                 </div>
                 <div class="hidden md:flex items-center gap-2">
                     <i class="fa-solid fa-clock text-brand-400"></i>
@@ -366,7 +415,10 @@
         </div>
     </section>
 
-    <div class="stats-container">
+   
+<div class="spacer"></div>
+
+<section class="stats-container" id="stats">
     <div class="stat-card">
         <div class="stat-number" data-target="120000">0</div>
         <div class="stat-label">Outpatients</div>
@@ -386,7 +438,9 @@
         <div class="stat-number" data-target="12">0</div>
         <div class="stat-label">Operation Theatres</div>
     </div>
-</div>
+</section>
+
+<div class="spacer"></div>
 
 
     <!-- Testimonials / CTA Banner -->
@@ -420,7 +474,7 @@
                         <div class="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-white shadow-lg">
                             <i class="fa-solid fa-heart-pulse text-xl"></i>
                         </div>
-                        <h2 class="font-bold text-2xl text-white">Siri Hospitals</h2>
+                        <h2 class="font-bold text-2xl text-white">SV Hospitals</h2>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Hyderabad's premier medical facility committed to high-quality care, compassionate service, and advanced technology.
@@ -460,7 +514,7 @@
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start gap-4">
                             <i class="fa-solid fa-location-dot mt-1 text-brand-500 text-lg"></i>
-                            <span>Dammaiguda,<br>Hyderabad, Telangana</span>
+                            <span>Rampally,<br>Hyderabad, Telangana</span>
                         </li>
                         <li class="flex items-center gap-4">
                             <i class="fa-solid fa-phone text-brand-500 text-lg"></i>
@@ -496,6 +550,47 @@
   btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
   });
+        const counters = document.querySelectorAll('.stat-number');
+let hasAnimated = false;
+
+// Ease-out function for smoother animation
+const easeOutQuad = (t) => t * (2 - t);
+
+const startCounting = () => {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let startTime = null;
+        const duration = 2500; // duration in ms
+
+        const update = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easeOutQuad(progress);
+            const value = Math.ceil(easedProgress * target);
+
+            counter.innerText = value.toLocaleString();
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        };
+
+        requestAnimationFrame(update);
+    });
+};
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+            startCounting();
+            hasAnimated = true; // run only once
+        }
+    });
+}, { threshold: 0.5 });
+
+observer.observe(document.getElementById('stats'));
+
 </script>
 </body>
 </html>
