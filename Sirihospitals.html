@@ -88,19 +88,61 @@
     </div>
 
     <!-- Navigation -->
-    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <div class="w-10 h-10 bg-gradient-to-br from-brand-400 to-secondary-500 rounded-xl flex items-center justify-center text-white shadow-floating">
-                        <i class="fa-solid fa-heart-pulse text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="font-bold text-2xl text-secondary-900 leading-tight tracking-tight">SV Hospitals</h1>
-                        <p class="text-[10px] uppercase font-semibold text-brand-600 tracking-wider">Rehabilation Centre</p>
-                    </div>
-                </div>
+    <!-- Navigation -->
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20 items-center">
+
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand-400 to-secondary-500 rounded-xl flex items-center justify-center text-white shadow-floating">
+          <i class="fa-solid fa-heart-pulse text-xl"></i>
+        </div>
+        <div>
+          <h1 class="font-bold text-2xl text-secondary-900">SV Hospitals</h1>
+          <p class="text-[10px] uppercase font-semibold text-brand-600">Rehabilation Centre</p>
+        </div>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#home" class="text-secondary-900 hover:text-brand-600 font-medium">Home</a>
+        <a href="#about" class="text-gray-500 hover:text-brand-600 font-medium">About Us</a>
+        <a href="#services" class="text-gray-500 hover:text-brand-600 font-medium">Services</a>
+        <a href="#contact" class="text-gray-500 hover:text-brand-600 font-medium">Contact</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:flex">
+        <a href="tel:9876543210" class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold">
+          Emergency Call
+        </a>
+      </div>
+
+      <!-- Hamburger -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-2xl text-gray-700">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+    <div class="flex flex-col p-4 space-y-4">
+      <a href="#home" class="text-gray-700 hover:text-brand-600">Home</a>
+      <a href="#about" class="text-gray-700 hover:text-brand-600">About Us</a>
+      <a href="#services" class="text-gray-700 hover:text-brand-600">Services</a>
+      <a href="#contact" class="text-gray-700 hover:text-brand-600">Contact</a>
+
+      <a href="tel:9876543210" class="bg-brand-600 text-white text-center py-2 rounded-lg">
+        Emergency Call
+      </a>
+    </div>
+  </div>
+</header>
                 
                 <!-- Desktop Menu -->
                 <nav class="hidden md:flex space-x-8">
@@ -419,5 +461,13 @@
         </div>
     </footer>
 
+    <script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
 </body>
 </html>
